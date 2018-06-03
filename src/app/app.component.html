@@ -8,6 +8,10 @@
       <div class="panel-body">
         <div class="messages-list">
 
+          <ul *ngIf="messages">
+            <li class="list-group-item" *ngFor="let message of messages">{{message.content}}</li>
+          </ul>
+
         </div>
         <div class="message-box">
           <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
