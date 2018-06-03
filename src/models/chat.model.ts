@@ -1,12 +1,11 @@
 export class Message {
   readonly content: string;
-  // readonly author: string;
+  readonly author: string;
 
   constructor(content: string,
-              // author: string
-  ) {
+              author: string) {
     this.content = content;
-    // this.author = author;
+    this.author = author;
   }
 }
 

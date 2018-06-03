@@ -1,19 +1,23 @@
-import {Component, OnInit} from '@angular/core';
-import {Message} from "../models/chat.model";
+import {Component, OnInit} from "@angular/core";
+import {ChatService} from "../services/chat.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'Lucca Chat';
-  userName = 'Figgo';
-  // messages: Message[] = [];
-  messages: Message[] = [{content: "Bonjour je suis figgo"}, {content: "Loremp ipsum blabla !"}, {content: "Je suis un outil destiné aux RH"}, {content: "Achetez moi je ne coute pas cher..."}];
 
-  ngOnInit(): void {
-
+  constructor(private  chatService: ChatService) {
   }
 
+
+  ngOnInit(): void {
+    this.chatService.addMessage('test observable', 'Lucca');
+    this.chatService.addMessage('1 vador', 'Boba Fett');
+    this.chatService.addMessage('2 vador', 'Jango');
+    this.chatService.addMessage('3 vador', 'Like');
+    // this.chatService.$messagesFlow.subscribe((msg) => {console.log(msg)});
+  }
 }

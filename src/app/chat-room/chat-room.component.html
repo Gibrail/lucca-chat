@@ -1,0 +1,16 @@
+<div class="chat-container col-12 col-sm-6 panel panel-primary">
+  <div class="panel-heading">{{userName}}</div>
+  <div class="panel-body">
+    <div class="messages-list">
+
+      <ul *ngIf="messages">
+        <li class="list-group-item" *ngFor="let message of messages">{{message.content}}</li>
+      </ul>
+
+    </div>
+    <div class="message-box">
+      <textarea #textBox class="message-input" placeholder="Ecrivez votre message..."></textarea>
+      <button type="submit" (click)="sendMessage(textBox.value)" class="message-submit">Envoyez</button>
+    </div>
+  </div>
+</div>
