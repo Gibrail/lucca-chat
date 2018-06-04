@@ -14,10 +14,10 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.chatService.addMessage('test observable', 'Lucca');
-    this.chatService.addMessage('1 vador', 'Boba Fett');
-    this.chatService.addMessage('2 vador', 'Jango');
-    this.chatService.addMessage('3 vador', 'Like');
+    // this.chatService.addMessage('test observable', 'Lucca');
+    // this.chatService.addMessage('1 vador', 'Boba Fett');
+    // this.chatService.addMessage('2 vador', 'Jango');
+    // this.chatService.addMessage('3 vador', 'Like');
     // this.chatService.$messagesFlow.subscribe((msg) => {console.log(msg)});
   }
 }

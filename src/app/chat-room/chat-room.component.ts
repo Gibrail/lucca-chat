@@ -20,7 +20,7 @@ export class ChatRoomComponent implements OnInit {
         this.messages.push(msg)
       },
       (error) => {
-        console.log(error + 'Erreur récupération des messages !')
+        console.log(error + ' Erreur récupération des messages !')
       });
   }
 

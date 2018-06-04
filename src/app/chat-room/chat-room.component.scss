@@ -1,3 +1,5 @@
+//Figgo #7e88b6
+//Timmi #6fc0a5
 .panel-body {
   min-height: 300px;
 }
@@ -5,12 +7,31 @@
 .chat-container {
   padding: 0;
 }
+.figgo-box-style {
+  background: #7e88b6;
+}
+.timmi-box-style {
+  background: #6fc0a5;
+}
 
 .messages-list {
   display: block;
   & ul {
+    padding: 0;
 
+    & li {
+      width: 80%;
+    }
   }
+}
+
+.figgo-style {
+  background: #aebbf6;
+  margin-right: auto;
+}
+.timmi-style {
+  background: #9afddc;
+  margin-left: auto;
 }
 
 .message-box {

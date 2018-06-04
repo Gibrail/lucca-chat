@@ -47,4 +47,19 @@ describe('ChatRoomComponent', () => {
     expect(dom.querySelector('.messages-list > ul > li:first-child').textContent).toEqual('Achetez moi je ne coute pas cher...');
     expect(dom.querySelector('.messages-list > ul > li:nth-child(3)').textContent).toEqual('Loremp ipsum blabla !');
   }));
+
+  it('should render textarea and submit button in message-box', async(() => {
+    const fixture = TestBed.createComponent(ChatRoomComponent);
+    const app = fixture.debugElement.componentInstance;
+    const dom = fixture.debugElement.nativeElement;
+    spyOn(app, 'sendMessage');
+
+    let button = dom.querySelector('.message-box button');
+    button.click();
+    fixture.detectChanges();
+
+    fixture.whenStable().then(() => {
+      expect(app.sendMessage).toHaveBeenCalledTimes(1);
+    });
+  }));
 });

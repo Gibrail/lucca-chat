@@ -1,10 +1,13 @@
 <div class="chat-container col-12 col-sm-6 panel panel-primary">
-  <div class="panel-heading">{{userName}}</div>
+  <div [ngClass]="{'figgo-box-style': (userName == 'Figgo'), 'timmi-box-style': (userName == 'Timmi')}" class="panel-heading">{{userName}}</div>
   <div class="panel-body">
     <div class="messages-list">
 
       <ul *ngIf="messages">
-        <li class="list-group-item" *ngFor="let message of messages">{{message.content}}</li>
+        <li
+          class="list-group-item"
+          *ngFor="let message of messages"
+          [ngClass]="{'figgo-style': (message.author == 'Figgo'), 'timmi-style': (message.author == 'Timmi')}">{{message.content}}</li>
       </ul>
 
     </div>
